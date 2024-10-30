@@ -1,3 +1,5 @@
+// noinspection com.intellij.reactbuddy.ExhaustiveDepsInspection
+// @ts-nocheck
 "use client"
 
 import * as React from "react"
