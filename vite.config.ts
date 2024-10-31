@@ -1,10 +1,11 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
-import { denyImports } from "vite-env-only";
+import { envOnlyMacros } from "vite-env-only";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
+    envOnlyMacros(),
     tsconfigPaths(),
     remix({
       future: {
