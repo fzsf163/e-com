@@ -1,18 +1,17 @@
 import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    isRouteErrorResponse,
-    useRouteError,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  isRouteErrorResponse,
+  useRouteError,
 } from "@remix-run/react";
 
 import { GlobalPendingIndicator } from "@/components/global-pending-indicator";
-import { Header } from "@/components/header";
 import {
-    ThemeSwitcherSafeHTML,
-    ThemeSwitcherScript,
+  ThemeSwitcherSafeHTML,
+  ThemeSwitcherScript,
 } from "@/components/theme-switcher";
 
 import type React from "react";

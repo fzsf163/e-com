@@ -4,17 +4,17 @@ import * as React from "react";
 import { useHydrated } from "remix-utils/use-hydrated";
 
 import {
-    getTheme,
-    setTheme as setSystemTheme,
+  getTheme,
+  setTheme as setSystemTheme,
 } from "@/components/theme-switcher";
 import { Button } from "@/components/ui/button";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 export function Header() {
@@ -35,10 +35,11 @@ export function Header() {
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              className="size-8 rounded-md border"
-              size="icon"
-              variant="secondary"
+            <div
+              className="size-8 rounded-md border cursor-pointer flex items-center justify-center"
+              // biome-ignore lint/a11y/useSemanticElements: <explanation>
+              role="button"
+              tabIndex={0}
             >
               <span className="sr-only">Theme selector</span>
               {!hydrated ? null : theme === "dark" ? (
@@ -48,40 +49,43 @@ export function Header() {
               ) : (
                 <LaptopIcon />
               )}
-            </Button>
+            </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mt-2">
             <DropdownMenuLabel>Theme</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <button
+              <Button
                 type="button"
                 className="w-full"
                 onClick={() => setTheme("light")}
                 aria-selected={theme === "light"}
+                variant={"ghost"}
               >
                 Light
-              </button>
+              </Button>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <button
+              <Button
                 type="button"
                 className="w-full"
                 onClick={() => setTheme("dark")}
                 aria-selected={theme === "dark"}
+                variant={"ghost"}
               >
                 Dark
-              </button>
+              </Button>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <button
+              <Button
                 type="button"
                 className="w-full"
                 onClick={() => setTheme("system")}
                 aria-selected={theme === "system"}
+                variant={"ghost"}
               >
                 System
-              </button>
+              </Button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
